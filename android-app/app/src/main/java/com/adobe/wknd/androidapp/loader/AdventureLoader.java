@@ -39,7 +39,8 @@ public class AdventureLoader extends AsyncTaskLoader<Adventure> {
             AEMHeadlessClientBuilder builder = AEMHeadlessClient.builder().endpoint(BuildConfig.AEM_HOST);
             String user = BuildConfig.AEM_USER;
             String password = BuildConfig.AEM_PASSWORD;
-            if (user != null && password != null) {
+
+            if (user.length() != 0 && password.length() != 0) {
                 builder.basicAuth(user, password);
             }
             AEMHeadlessClient client = builder.build();
